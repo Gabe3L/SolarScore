@@ -29,7 +29,7 @@ def get_gps_coordinates(address: str) -> tuple[float, float]:
 
 
 if __name__ == "__main__":
-    test_address = "United College, 190 Westmount Rd N, Waterloo, ON N2L 3G5"
+    test_address = "450 Millbank Dr, London, ON N6C 4W7"
     try:
         lat, lon = get_gps_coordinates(test_address)
         print(f"Address: {test_address}")

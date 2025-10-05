@@ -1,19 +1,17 @@
-import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
+import Home from './pages/Home';
+import Lookup from './pages/Lookup';
 
-import globalStyles from "./App.module.css";
+import './App.module.css';
 
 export default function App() {
   return (
-    <div className={globalStyles.container}>
-      <div className={globalStyles.content}>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </HashRouter>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/lookup" element={<Lookup />} />
+      </Routes>
+    </Router>
   );
 }
