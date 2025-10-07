@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { JSX } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container, Heading, Buttons } from './styles';
 
@@ -24,14 +25,22 @@ const DefaultOverlayContent: React.FC<Props> = ({ label, Description, button1, b
       </Heading>
 
       <Buttons>
-        <a href={button1?.link || '#'} target="_blank" rel="noopener noreferrer" className={!button2?.link ? 'only-one' : ''}>
-          {button1?.text || 'Custom Order'}
-        </a>
+        {button1?.link && (
+          <Link
+            to={button1.link}
+            className={!button2?.link ? 'only-one' : ''}
+          >
+            {button1.text}
+          </Link>
+        )}
 
         {button2?.link && (
-          <a href={button2?.link || '#'} target="_blank" rel="noopener noreferrer" className="white">
-            {button2?.text || 'Existing Inventory'}
-          </a>
+          <Link
+            to={button2.link}
+            className="white"
+          >
+            {button2.text}
+          </Link>
         )}
       </Buttons>
     </Container>

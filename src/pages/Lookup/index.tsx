@@ -29,7 +29,6 @@ const Page: React.FC = () => {
                   label={model.title}
                   Description={model.Description}
                   button1={{ text: model.text1, link: model.link1 }}
-                  button2={{ text: model.text2, link: model.link2 }}
                 />
               )}
             />
